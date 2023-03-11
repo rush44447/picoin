@@ -1,4 +1,3 @@
-import { Block } from "../util/Block";
 import { Wallet } from "../util/Wallet";
 
 export default class Wallets extends Array {
