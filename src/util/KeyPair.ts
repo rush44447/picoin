@@ -1,13 +1,16 @@
-export class KeyPair {
-  index: number;
-  secretKey: string;
-  publicKey: string;
+import KeyPairs from "../wallet/KeyPairs";
 
-  static organizeJsonArray(keyPair) {
-    if(keyPair.hasOwnProperty('index') &&
-      keyPair.hasOwnProperty('publicKey') &&
-      keyPair.hasOwnProperty('secretKey'))
-    return keyPair;
-    return null;
-  }
+export class KeyPair {
+    index: number;
+    secretKey: string;
+    publicKey: string;
+
+    static organizeJsonArray(keypair) {
+       if(keypair.hasOwnProperty('index') &&
+           keypair.hasOwnProperty('secretKey') &&
+           keypair.hasOwnProperty('publicKey'))
+        return keypair;
+       return null;
+    }
+
 }

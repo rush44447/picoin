@@ -11,8 +11,11 @@ export const Config = {
   FEE_PER_TRANSACTION: 10,
   TRANSACTION_PER_BLOCK: 2,
   pow: {
-    getDifficulty(blocks, index) {
-
+    getDifficulty(blocks, index?) {
+      const BASE_DIFFICULTY = Number.MAX_SAFE_INTEGER;
+      const EVERY_X_BLOCK = 5;
+      const POW_CURVE = 5;
+        return Math.max(Math.floor(BASE_DIFFICULTY / Math.pow(Math.floor(((index || blocks.length)+1)/EVERY_X_BLOCK )+1, POW_CURVE)), 0);
     }
   }
 }
